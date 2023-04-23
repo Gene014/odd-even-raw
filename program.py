@@ -6,5 +6,12 @@
 
 def process():
     # open numbers.txt (read), double txt even.txt (append), triple odd.txt (append)
-    with open("numbers.txt" , "r") as input_file, open("even.txt" , "a") as even_file, open ("odd.txt" , "a") as odd_file:
-        #read numbers.txt line by line
+    with open("numbers.txt","r") as input_file, open("even.txt","w") as even_file, open ("odd.txt","w") as odd_file:
+            #read numbers.txt line by line
+        for line in input_file:
+            input_num = int(line)
+                # if int is even
+            if input_num % 2 == 0:
+                even = input_num
+                even_file.write(str(even) + "\n")
+process()
